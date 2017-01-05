@@ -25,6 +25,7 @@ toolbar.show(int where)  0,1:vertical show  3,4 horizantal show ;
 
 
 ------------------------------susyimes custom usage--------------------------------------
+
 Usage:
 compile 'com.susyimes.ntype:freetoolbar:1.0.1.s'
 
