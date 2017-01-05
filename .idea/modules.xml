@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FreeToolBarPac.iml" filepath="$PROJECT_DIR$/FreeToolBarPac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FreeToolbarPac.iml" filepath="$PROJECT_DIR$/FreeToolbarPac.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/freetoolbar/freetoolbar.iml" filepath="$PROJECT_DIR$/freetoolbar/freetoolbar.iml" />
     </modules>

@@ -43,7 +43,13 @@ public class FreeToolbarBehaviorB extends VerticalScrollingBehavior {
     private void handleDirection(CoordinatorLayout coordinatorLayout, View child, int scrollDirection) {
         FreeToolbarBottom atobar = mViewRef.get();
 
-
+           /* if (scrollDirection == VerticalScrollingBehavior.ScrollDirection.SCROLL_DIRECTION_DOWN && !atobar.isHidden()) {
+                //updateSnackBarPosition(parent, child, getSnackBarInstance(parent, child), -mBottomNavHeight);
+                atobar.hide(1);
+            } else if (scrollDirection == VerticalScrollingBehavior.ScrollDirection.SCROLL_DIRECTION_UP && atobar.isHidden()) {
+                //updateSnackBarPosition(parent, child, getSnackBarInstance(parent, child), 0);
+                atobar.show(1);
+            }*/
         if (!atobar.isHidden()){
             atobar.hide(1);
         }

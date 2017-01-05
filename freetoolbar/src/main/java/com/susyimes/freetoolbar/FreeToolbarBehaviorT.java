@@ -45,6 +45,13 @@ public class FreeToolbarBehaviorT extends VerticalScrollingBehavior {
         if (!atobar.isHidden()){
             atobar.hide(0);
         }
+           /*if (scrollDirection == VerticalScrollingBehavior.ScrollDirection.SCROLL_DIRECTION_DOWN && !atobar.isHidden()) {
+                //updateSnackBarPosition(parent, child, getSnackBarInstance(parent, child), -mBottomNavHeight);
+                atobar.show();
+            } else if (scrollDirection == VerticalScrollingBehavior.ScrollDirection.SCROLL_DIRECTION_UP && !atobar.isHidden()) {
+                //updateSnackBarPosition(parent, child, getSnackBarInstance(parent, child), 0);
+                atobar.hide();
+            }*/
         //if (bottomNavigationBar != null && bottomNavigationBar.isAutoHideEnabled()) {
           /*  if (scrollDirection == com.ashokvarma.bottomnavigation.behaviour.VerticalScrollingBehavior.ScrollDirection.SCROLL_DIRECTION_DOWN && !atobar.isHidden()) {
                 //updateSnackBarPosition(parent, child, getSnackBarInstance(parent, child), -mBottomNavHeight);
