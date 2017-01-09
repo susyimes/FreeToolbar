@@ -4,7 +4,7 @@ An expand native toolbar, support 4 way show &amp; hide. include 2 automatic beh
 
 #Usage:
 ```groovy
-compile 'com.susyimes.ntype:freetoolbar:1.0.2'
+compile 'com.susyimes.ntype:freetoolbar:1.0.4'
 ```
 
 1.0.4
