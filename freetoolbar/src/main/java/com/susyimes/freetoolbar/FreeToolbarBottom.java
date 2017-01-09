@@ -252,8 +252,8 @@ public class FreeToolbarBottom extends Toolbar {
      * hide with animation
      */
     //can hide force
-    public void move(int direnction,int distance, int duration){
-        hide(true,direnction,distance,duration);
+    public void move(int direnction,int offset, int duration){
+        hide(true,direnction,offset,duration);
     }
     public void hide(int direction) {
         hide(true,direction);
@@ -266,18 +266,18 @@ public class FreeToolbarBottom extends Toolbar {
     /**
      * @param animate is animation enabled for hide
      */
-    public void hide(boolean animate, int direction, int distance, int duration) {
+    public void hide(boolean animate, int direction, int offset, int duration) {
         mIsHidden = true;
 
 
         if (direction==0){
-            setTranslationY(-distance, animate);}
+            setTranslationY(-offset, animate);}
         else if (direction==1){
-            setTranslationY(distance, animate);
+            setTranslationY(offset, animate);
         }else if (direction==3){
-            setTranslationX(-distance,animate);
+            setTranslationX(-offset,animate);
         }else if (direction==4){
-            setTranslationX(duration,animate);
+            setTranslationX(offset,animate);
         }
     }
 

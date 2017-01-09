@@ -266,18 +266,18 @@ public class FreeToolbarTop extends Toolbar {
     /**
      * @param animate is animation enabled for hide
      */
-    public void hide(boolean animate, int direction, int distance, int duration) {
+    public void hide(boolean animate, int direction, int offset, int duration) {
         mIsHidden = true;
 
 
         if (direction==0){
-            setTranslationY(-distance, animate);}
+            setTranslationY(-offset, animate);}
         else if (direction==1){
-            setTranslationY(distance, animate);
+            setTranslationY(offset, animate);
         }else if (direction==3){
-            setTranslationX(-distance,animate);
+            setTranslationX(-offset,animate);
         }else if (direction==4){
-            setTranslationX(duration,animate);
+            setTranslationX(offset,animate);
         }
     }
 
