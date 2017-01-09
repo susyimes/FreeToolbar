@@ -1,6 +1,30 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'NtypeView'
+    bintrayName = 'freetoolbar'
 
+    publishedGroupId = 'com.susyimes.ntype'
+    libraryName = 'FreeToolBar'
+    artifact = 'freetoolbar'
+
+    libraryDescription = 'An expand native toolbar, support 4 way show & hide. include 2 automatic behavior.'
+
+    siteUrl = 'https://github.com/susyimes/FreeToolbar'
+    gitUrl = 'https://github.com/susyimes/FreeToolbar.git'
+
+
+    libraryVersion = '1.0.2'
+
+    developerId = 'susyimes'
+    developerName = 'JiHua Su'
+    developerEmail = 'susyimes@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+}
 
 android {
     compileSdkVersion 25
@@ -37,6 +61,5 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 }
-/*
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'*/
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

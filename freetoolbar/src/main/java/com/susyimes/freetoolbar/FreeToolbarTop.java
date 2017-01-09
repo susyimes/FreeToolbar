@@ -251,24 +251,45 @@ public class FreeToolbarTop extends Toolbar {
     /**
      * hide with animation
      */
-    public void hide(int where) {
-        hide(true,where);
+    //can hide force
+    public void move(int direnction,int distance, int duration){
+        hide(true,direnction,distance,duration);
+    }
+    public void hide(int direction) {
+        hide(true,direction);
     }
     public void hide() {
         hide(true);
     }
 
+
     /**
      * @param animate is animation enabled for hide
      */
-    public void hide(boolean animate,int where) {
+    public void hide(boolean animate, int direction, int distance, int duration) {
         mIsHidden = true;
-        if (where==0){
-        setTranslationY(-this.getHeight(), animate);}else if (where==1){
+
+
+        if (direction==0){
+            setTranslationY(-distance, animate);}
+        else if (direction==1){
+            setTranslationY(distance, animate);
+        }else if (direction==3){
+            setTranslationX(-distance,animate);
+        }else if (direction==4){
+            setTranslationX(duration,animate);
+        }
+    }
+
+    public void hide(boolean animate,int direction) {
+        mIsHidden = true;
+        if (direction==0){
+            setTranslationY(-this.getHeight(), animate);}
+        else if (direction==1){
             setTranslationY(this.getHeight(), animate);
-        }else if (where==3){
+        }else if (direction==3){
             setTranslationX(-this.getWidth(),animate);
-        }else if (where==4){
+        }else if (direction==4){
             setTranslationX(this.getWidth(),animate);
         }
     }
@@ -276,7 +297,7 @@ public class FreeToolbarTop extends Toolbar {
     public void hide(boolean animate) {
         mIsHidden = true;
 
-            setTranslationY(-this.getHeight(), animate);
+        setTranslationY(-this.getHeight(), animate);
     }
 
     /**
@@ -285,9 +306,11 @@ public class FreeToolbarTop extends Toolbar {
     public void show() {
         show(true);
     }
-    public void show(int where){
-        show(true,where);
+
+    public void show(int direction){
+        show(true,direction);
     }
+
     /**
      * @param animate is animation enabled for show
      */
@@ -295,14 +318,17 @@ public class FreeToolbarTop extends Toolbar {
         mIsHidden = false;
         setTranslationY(0, animate);
     }
-    public void show(boolean animate,int where) {
-        mIsHidden = false;
-        if (where==0||where==1){
-            setTranslationY(0, animate);}else {
 
+    public void show(boolean animate,int direction) {
+        mIsHidden = false;
+        if (direction==0||direction==1){
+            setTranslationY(0, animate);
+        }else {
             setTranslationX(0, animate);
         }
     }
+
+
     /**
      * @param offset  offset needs to be set
      * @param animate is animation enabled for translation
@@ -320,6 +346,26 @@ public class FreeToolbarTop extends Toolbar {
     private void setTranslationX(int offset, boolean animate) {
         if (animate) {
             animateOffset(offset);
+        } else {
+            if (mTranslationAnimator != null) {
+                mTranslationAnimator.cancel();
+            }
+            this.setTranslationY(offset);
+        }
+    }
+    private void setTranslationY(int offset, boolean animate,int duraion) {
+        if (animate) {
+            animateOffset(offset,duraion);
+        } else {
+            if (mTranslationAnimator != null) {
+                mTranslationAnimator.cancel();
+            }
+            this.setTranslationY(offset);
+        }
+    }
+    private void setTranslationX(int offset, boolean animate,int duration) {
+        if (animate) {
+            animateOffset(offset,duration);
         } else {
             if (mTranslationAnimator != null) {
                 mTranslationAnimator.cancel();
@@ -348,6 +394,18 @@ public class FreeToolbarTop extends Toolbar {
         mTranslationAnimator.translationY(offset).start();
     }
 
+    private void animateOffset(final int offset,final int duration) {
+        if (mTranslationAnimator == null) {
+            mTranslationAnimator = ViewCompat.animate(this);
+            mTranslationAnimator.setDuration(duration);
+            mTranslationAnimator.setInterpolator(INTERPOLATOR);
+        } else {
+            mTranslationAnimator.cancel();
+        }
+        mTranslationAnimator.translationY(offset).start();
+    }
+
+
     public boolean isHidden() {
         return mIsHidden;
     }
@@ -355,7 +413,7 @@ public class FreeToolbarTop extends Toolbar {
 
     public void turnState(){
         if (mTranslationAnimator!=null){
-        mTranslationAnimator.cancel();}
+            mTranslationAnimator.cancel();}
 
 
     }

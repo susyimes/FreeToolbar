@@ -24,10 +24,10 @@ toolbar.hide()
 toolbar.show()
 
 
-toolbar.hide(int where)  hide to where  0:top 1:bottom 2:left 3:right  ;
+toolbar.hide(int direction)  hide to where  0:top 1:bottom 2:left 3:right  ;
 
 
-toolbar.show(int where)  0,1:vertical show  3,4 horizantal show ;
+toolbar.show(int direction)  0,1:vertical show  3,4 horizantal show ;
 
 
 
