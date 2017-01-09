@@ -9,6 +9,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -256,17 +257,21 @@ public class FreeBar extends FrameLayout {
         } else {
             mTranslationAnimator.cancel();
         }
+        mTranslationAnimator.setDuration(mRippleAnimationDuration);
         mTranslationAnimator.translationY(offset).start();
     }
 
-    private void animateOffset(final int offset,final int duration) {
+    private void animateOffset(final int offset, int duration) {
         if (mTranslationAnimator == null) {
             mTranslationAnimator = ViewCompat.animate(this);
+            Log.i("duration",duration+"");
             mTranslationAnimator.setDuration(duration);
             mTranslationAnimator.setInterpolator(INTERPOLATOR);
         } else {
             mTranslationAnimator.cancel();
         }
+        mTranslationAnimator.setDuration(duration);
+        mTranslationAnimator.setInterpolator(INTERPOLATOR);
         mTranslationAnimator.translationY(offset).start();
     }
 

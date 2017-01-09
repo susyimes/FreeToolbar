@@ -390,6 +390,7 @@ public class FreeToolbar extends Toolbar {
         } else {
             mTranslationAnimator.cancel();
         }
+        mTranslationAnimator.setDuration(mRippleAnimationDuration);
         mTranslationAnimator.translationY(offset).start();
     }
 
@@ -401,6 +402,8 @@ public class FreeToolbar extends Toolbar {
         } else {
             mTranslationAnimator.cancel();
         }
+        mTranslationAnimator.setDuration(duration);
+        mTranslationAnimator.setInterpolator(INTERPOLATOR);
         mTranslationAnimator.translationY(offset).start();
     }
 
